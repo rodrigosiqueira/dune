@@ -24,7 +24,6 @@
 // XXX: Must match libdune/dune.h
 #define DUNE_SIGNAL_INTR_BASE 200
 
-//TODO: Add __packed and remove __attribute__ at the end
 struct dune_config {
 	__s64 ret;
 	__u64 rax;
@@ -50,14 +49,12 @@ struct dune_config {
 	__u64 vcpu;
 } __attribute__((packed));
 
-//TODO: Add __packed and remove __attribute__ at the end
 struct dune_layout {
 	__u64 phys_limit;
 	__u64 base_map;
 	__u64 base_stack;
 } __attribute__((packed));
 
-//TODO: Add __packed and remove __attribute__ at the end
 struct dune_trap_regs {
 	__u64 rax;
 	__u64 rbx;
@@ -81,7 +78,6 @@ struct dune_trap_regs {
 
 typedef void (*dune_trap_notify_func)(struct dune_trap_regs*, void*);
 
-//TODO: Add __packed and remove __attribute__ at the end
 struct dune_trap_config {
 	__u64 trigger_rip;
 	dune_trap_notify_func notify_func;
@@ -92,9 +88,9 @@ struct dune_trap_config {
 } __attribute__((packed));
 
 /* 1 gigabyte */
-#define GPA_STACK_SIZE ((unsigned long) 1 << 30)
+#define GPA_STACK_SIZE ((unsigned long)1 << 30)
 /* 63 gigabytes */
-#define GPA_MAP_SIZE   (((unsigned long) 1 << 36) - GPA_STACK_SIZE)
+#define GPA_MAP_SIZE   (((unsigned long)1 << 36) - GPA_STACK_SIZE)
 #define LG_ALIGN(addr) ((addr + (1 << 30) - 1) & ~((1 << 30) - 1))
 
 #endif /* __ASSEMBLY__ */
