@@ -5,6 +5,9 @@
 *.hi
 *.cmd
 *.out
+*.ko
+*.order
+*.mod*
 dist
 apps/sandbox/sandbox
 apps/ufirewall/ufirewall
@@ -25,4 +28,7 @@ test/hello
 test/test
 test/test_sandbox
 test/timetest
+test/.tmp_versions/
+test/Module.symvers
+test/hugepages
 tags
